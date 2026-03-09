@@ -11,13 +11,13 @@ export default function StarRating({ rating, count, size = "sm" }) {
     <div className="flex items-center gap-1">
       <div className="flex items-center gap-0.5">
         {Array.from({ length: fullStars }).map((_, i) => (
-          <StarIcon className={`${starSize} text-amber-400 fill-amber-400`}/>
+          <StarIcon key={i} className={`${starSize} text-amber-400 fill-amber-400`}/>
         ))}
         {hasHalf && (
           <HalfStarIcon className={`${starSize} text-amber-400`}/>
         )}
         {Array.from({ length: emptyStars }).map((_, i) => (
-          <StarIcon className={`${starSize} text-slate-300 fill-slate-300`}/>
+          <StarIcon key={i} className={`${starSize} text-slate-300 fill-slate-300`}/>
         ))}
       </div>
       {count !== undefined && (
